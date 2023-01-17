@@ -1,0 +1,21 @@
+/*fonts*/
+
+@font-face {
+    font-family: 'MrDafoe';
+    src: url(../components/fonts/MrDafoe-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lexend';
+    src: url(../components/fonts/Lexend-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TitanOne';
+    src: url(../components/fonts/TitanOne-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lobster';
+    src: url(../components/fonts/Lobster-Regular.ttf) format('truetype');
+}
