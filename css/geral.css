@@ -24,9 +24,23 @@ h1 {
     font-family: 'TitanOne'
 }
 
+h2 {
+    font-family: 'TitanOne'
+}
+
+h3 {
+    font-family: 'TitanOne'
+}
+
 /*navbar*/
 
 .nav-item {
     margin-left: 20px;
     font-family: 'Lexend';
+}
+
+/*title*/
+
+.title {
+    min-height: 90px;
 }
