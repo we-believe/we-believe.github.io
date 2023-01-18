@@ -20,6 +20,13 @@
     src: url(../components/fonts/Lobster-Regular.ttf) format('truetype');
 }
 
-h1{
+h1 {
     font-family: 'TitanOne'
+}
+
+/*navbar*/
+
+.nav-item {
+    margin-left: 20px;
+    font-family: 'Lexend';
 }
