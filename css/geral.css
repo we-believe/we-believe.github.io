@@ -19,3 +19,7 @@
     font-family: 'Lobster';
     src: url(../components/fonts/Lobster-Regular.ttf) format('truetype');
 }
+
+h1{
+    font-family: 'TitanOne'
+}
