@@ -1,5 +1,5 @@
 @media (max-width: 767px) {
-    .fixed-bottom {
+    div.fixed-bottom {
         position: relative;
     }
 }
