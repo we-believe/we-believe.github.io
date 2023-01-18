@@ -1,5 +1,7 @@
-@media (max-width: 767px) {
-    div.fixed-bottom {
-        position: relative;
+@media (min-width: 767px) {
+    .bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
 }
