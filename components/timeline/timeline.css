@@ -4,7 +4,7 @@ body {
 
 .body-wrap {
     background-color: #fff;
-    width: 600px;
+    width: 100%;
     min-height: 500px;
     margin: 0 auto;
     font-size: 12px;
