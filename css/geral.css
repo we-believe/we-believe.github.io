@@ -24,6 +24,10 @@ h1 {
     font-family: 'TitanOne'
 }
 
+h1.brand-name {
+    font-family: 'MrDafoe'
+}
+
 h2 {
     font-family: 'TitanOne'
 }
