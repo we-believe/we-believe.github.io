@@ -378,14 +378,14 @@ body {
 
 .cards-container section.prev {
     height: auto;
-    opacity: 0.4;
+    opacity: 0.1;
     transform: translateX(-105%);
     z-index: 0;
 }
 
 .cards-container section.next {
     height: auto;
-    opacity: 0.4;
+    opacity: 0.1;
     transform: translateX(105%);
     z-index: 0;
 }
@@ -399,7 +399,7 @@ body {
 @media (min-width: 900px) {
 
     .body-wrap img {
-        max-width: 400px;
+        max-width: 100%;
         align-content: center;
     }
 }
