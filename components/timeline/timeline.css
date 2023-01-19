@@ -353,7 +353,7 @@ body {
 }
 
 .cards-container section {
-    width: 70%;
+    width: 35%;
     position: absolute;
     margin-left: 15%;
     margin-bottom: 2em;
@@ -370,6 +370,7 @@ body {
 
 .cards-container section.active {
     height: auto;
+    max-width: 500px;
     opacity: 1;
     transform: translateX(0);
     z-index: 5;
