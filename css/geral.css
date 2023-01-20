@@ -49,10 +49,12 @@ h6 {
 .nav-item {
     margin-left: 20px;
     font-family: 'Lexend';
+
 }
 
 .navbar-brand {
     font-family: 'MrDafoe';
+    vertical-align: middle;
 }
 
 /*title*/
