@@ -50,7 +50,9 @@ h6 {
     margin-left: 20px;
     font-family: 'Lexend';
 }
-
+.navbar-brand{
+    font-family:'MrDafoe'
+}
 /*title*/
 
 .title {
