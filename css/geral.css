@@ -58,7 +58,7 @@ h6 {
     transform: translateY(-5px)
 }
 
-.nav-brand {
+.navbar-brand {
     font-family: 'MrDafoe';
     font-size: 50px;
     font-style: italic
