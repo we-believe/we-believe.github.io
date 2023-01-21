@@ -53,3 +53,8 @@ h6 {
 .title {
     min-height: 90px;
 }
+
+.logo {
+    transform: translateY(-5px);
+    font-family: 'MrDafoe'
+}
