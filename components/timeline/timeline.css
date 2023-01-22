@@ -72,7 +72,7 @@ body {
 
 @media (max-width: 600px) {
     .cards-container section {
-        width: 70%;
+        width: 85%;
         position: absolute;
         margin-left: 5%;
         margin-bottom: 2em;
