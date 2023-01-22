@@ -12,6 +12,22 @@ body {
 
 
 @media (min-width: 600px) {
+    .cards-container section {
+        width: 35%;
+        position: absolute;
+        margin-left: 15%;
+        margin-bottom: 2em;
+        border: 1px solid #f5f7f6;
+        padding: 1.5em;
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out;
+        top: 0;
+        opacity: 0;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+    }
+
     .periods-container section .year {
         font-family: 'Lobster';
         font-size: 25px;
@@ -55,7 +71,23 @@ body {
 }
 
 @media (max-width: 600px) {
-    .periods-container section .year {
+    .cards-container section {
+        width: 70%;
+        position: absolute;
+        margin-left: 5%;
+        margin-bottom: 2em;
+        border: 1px solid #f5f7f6;
+        padding: 1.5em;
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out;
+        top: 0;
+        opacity: 0;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    ⁹ .periods-container section .year {
         font-family: 'Lobster';
         font-size: 20px;
         font-weight: 400;
