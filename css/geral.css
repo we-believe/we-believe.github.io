@@ -53,13 +53,3 @@ h6 {
 .title {
     min-height: 90px;
 }
-
-.logo {
-    transform: translateY(-5px)
-}
-
-.navbar-brand {
-    font-family: 'MrDafoe';
-    font-size: 50px;
-    font-style: italic
-}
