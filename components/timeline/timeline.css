@@ -87,7 +87,7 @@ body {
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
     }
 
-    ⁹ .periods-container section .year {
+    .periods-container section .year {
         font-family: 'Lobster';
         font-size: 20px;
         font-weight: 400;
