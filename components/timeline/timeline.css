@@ -384,22 +384,6 @@ body {
     width: 100px;
 }
 
-.cards-container section {
-    width: 35%;
-    position: absolute;
-    margin-left: 15%;
-    margin-bottom: 2em;
-    border: 1px solid #f5f7f6;
-    padding: 1.5em;
-    box-sizing: border-box;
-    transition: transform 0.3s ease-in-out;
-    top: 0;
-    opacity: 0;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-}
-
 .cards-container section.active {
     height: auto;
     max-width: 500px;
