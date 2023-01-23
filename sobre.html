@@ -17,11 +17,9 @@
 <body>
     <nav class="navbar navbar-dark navbar-expand-md">
         <div class="container-fluid">
-            <figure>
-                <a class="navbar-brand mb-0" href="./index.html">
-                    <img src="images/logo-wb-top.svg" alt="Logo" width="60" height="60">
-                </a>
-            </figure>
+            <a class="navbar-brand mb-0" href="./index.html">
+                <img src="images/logo-wb-top.svg" alt="Logo" width="60" height="60">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,20 +46,20 @@
         <section class="image-grid">
             <div class="container-xxl">
                 <div class="row gy-4">
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <a class="d-block" href="">
-                            <img width="1920" height="1280" src="./images/galery/img1.jpg" class="img-fluid"
-                                alt="teste 1" data-caption="We Believe, jovens, teatro">
+                    <div class="item col-sm-6 col-md-4 mb-3">
+                        <a data-bs-target="#img1" data-bs-toggle="modal">
+                            <img src="./images/galery/img1.jpg" class="img-fluid" alt="teste 1"
+                                data-caption="We Believe, jovens, teatro">
                     </div>
                     <div class="item col-sm-6 col-md-4 mb-3">
                         <a class="d-block" href="">
-                            <img width="1920" height="1280" src="./images/galery/img2.jpg" class="img-fluid"
-                                alt="teste 2" data-caption="We Believe, jovens, teatro">
+                            <img src="./images/galery/img2.jpg" class="img-fluid" alt="teste 2"
+                                data-caption="We Believe, jovens, teatro">
                     </div>
                     <div class="item col-sm-6 col-md-4 mb-3">
                         <a class="d-block" href="">
-                            <img width="1920" height="1280" src="./images/galery/img3.jpg" class="img-fluid"
-                                alt="teste 3" data-caption="We Believe, jovens, teatro">
+                            <img src="./images/galery/img3.jpg" class="img-fluid" alt="teste 3"
+                                data-caption="We Believe, jovens, teatro">
                     </div>
                     <div class="item col-sm-6 col-md-4 mb-3">
                         <a href="./images/galery/img4.jpg" class="fancybox" data-fancybox="gallery1">
@@ -81,92 +79,49 @@
                 </div>
             </div>
         </section>
-        <div class="modal lightbox-modal" id="lightbox-modal" tabindex="-1">
-            <div class="modal-dialog modal-fullscreen">
+        <div class="modal fade" id="img1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                     <div class="modal-body">
-                        <div class="container-fluid p-0">
-                            <script>
-                                const imageGrid = document.querySelector(".image-grid");
-                                const links = imageGrid.querySelectorAll("a");
-                                const imgs = imageGrid.querySelectorAll("img");
-                                const lightboxModal = document.getElementById("lightbox-modal");
-                                const bsModal = new bootstrap.Modal(lightboxModal);
-                                const modalBody = document.querySelector(".modal-body .container-fluid");
-
-                                for (const link of links) {
-                                    link.addEventListener("click", function (e) {
-                                        e.preventDefault();
-                                        const currentImg = link.querySelector("img");
-                                        const lightboxCarousel = document.getElementById("lightboxCarousel");
-                                        if (lightboxCarousel) {
-                                            const parentCol = link.parentElement.parentElement;
-                                            const index = [...parentCol.parentElement.children].indexOf(parentCol);
-                                            const bsCarousel = new bootstrap.Carousel(lightboxCarousel);
-                                            bsCarousel.to(index);
-                                        } else {
-                                            createCarousel(currentImg);
-                                        }
-                                        bsModal.show();
-                                    });
-                                }
-
-                                function createCarousel(img) {
-                                    const markup = `
-    <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
-      <div class="carousel-inner">
-        ${createSlides(img)}
-      </div> 
-      <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
-       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-       <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    `;
-
-                                    modalBody.innerHTML = markup;
-                                }
-
-                                function createSlides(img) {
-                                    let markup = "";
-                                    const currentImgSrc = img.getAttribute("src");
-
-                                    for (const img of imgs) {
-                                        const imgSrc = img.getAttribute("src");
-                                        const imgAlt = img.getAttribute("alt");
-                                        const imgCaption = img.getAttribute("data-caption");
-
-                                        markup += `
-    <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
-      <img src=${imgSrc} alt=${imgAlt}>
-      ${imgCaption ? createCaption(imgCaption) : ""}
-    </div>
-    `;
-                                    }
-
-                                    return markup;
-                                }
-
-                                function createCaption(caption) {
-                                    return `<div class="carousel-caption">
-     <p class="m-0">${caption}</p>
-    </div>`;
-                                }
-                            </script>
-                        </div>
+                        <img src="./images/galery/img1.jpg" class="img-fluid" alt="teste 1"
+                            data-caption="We Believe, jovens, teatro">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                            data-bs-toggle="modal">Open second modal</button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="./images/galery/img2.jpg" class="img-fluid" alt="teste 1"
+                            data-caption="We Believe, jovens, teatro">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back
+                            to first</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first
+            modal</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
     </main>
-
-
 
     <footer>
         <div class="text-center mt-5">
