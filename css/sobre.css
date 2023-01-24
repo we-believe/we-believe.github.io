@@ -6,3 +6,10 @@
 .item:hover {
   filter: grayscale(0%)
 }
+
+.carousel-control-next,
+.carousel-control-prev,
+.carousel-indicators,
+.carousel-inner p {
+  filter: invert(100%);
+}
