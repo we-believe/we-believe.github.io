@@ -1,5 +1,5 @@
 .item {
-  transition: .5s ease-in-out;
+  transition: .8s ease-in-out;
   filter: grayscale(100%)
 }
 
@@ -8,8 +8,19 @@
 }
 
 .carousel-control-next,
-.carousel-control-prev,
-.carousel-indicators,
-.carousel-inner p {
+.carousel-control-prev {
   filter: invert(100%);
+}
+
+img.inactive {
+  filter: grayscale(100%)
+}
+
+img.active {
+  filter: grayscale(0%)
+}
+
+.carousel-item {
+  object-position: 50% 50% !important;
+  object-fit: contain !important;
 }
