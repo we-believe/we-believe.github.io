@@ -46,27 +46,66 @@
 
         <div class="container text-center">
             <div class="row align-items-center">
-                <div class="item col-sm-2 col-md-3 col-lg-4 mt-4">
-                    <img src="./images/galery/img1.jpg" class="hover-shadow img-thumbnail img-fluid">
+                <div class="item col-sm-6 col-md-4 col-lg-3 mt-4">
+                    <img src="./images/galery/img1.jpg" class="hover-shadow rounded img-fluid">
                 </div>
-                <div class="item col-sm-2 col-md-3 col-lg-4 mt-4">
-                    <img src="./images/galery/img2.jpg" class="hover-shadow img-thumbnail img-fluid">
+                <div class="item col-sm-6 col-md-4 col-lg-3 mt-4">
+                    <img src="./images/galery/img2.jpg" class="hover-shadow rounded img-fluid">
                 </div>
-                <div class="item col-sm-2 col-md-3 col-lg-4 mt-4">
-                    <img src="./images/galery/img3.jpg" class="hover-shadow img-thumbnail img-fluid">
+                <div class="item col-sm-6 col-md-4 col-lg-3 mt-4">
+                    <img src="./images/galery/img3.jpg" class="hover-shadow rounded img-fluid">
                 </div>
-                <div class="item col-sm-2 col-md-3 col-lg-4 mt-4">
-                    <img src="./images/galery/img4.jpg" class="hover-shadow img-thumbnail img-fluid">
+                <div class="item col-sm-6 col-md-4 col-lg-3 mt-4">
+                    <img src="./images/galery/img4.jpg" class="hover-shadow rounded img-fluid">
                 </div>
-                <div class="item col-sm-2 col-md-3 col-lg-4 mt-4">
-                    <img src="./images/galery/img5.jpg" class="hover-shadow img-thumbnail img-fluid">
+                <div class="item col-sm-6 col-md-4 col-lg-3 mt-4">
+                    <img src="./images/galery/img5.jpg" class="hover-shadow rounded img-fluid">
                 </div>
-                <div class="item col-sm-2 col-md-3 col-lg-4 mt-4">
-                    <img src="./images/galery/img6.jpg" class="hover-shadow img-thumbnail img-fluid">
+                <div class="item col-sm-6 col-md-4 col-lg-3 mt-4">
+                    <img src="./images/galery/img6.jpg" class="hover-shadow rounded img-fluid">
                 </div>
             </div>
         </div>
 
+
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title fs-6" id="exampleModalToggleLabel">1/6</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Show a second modal and hide this one with the button below.
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                            data-bs-toggle="modal">Open second modal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Hide this modal and show the first with the button below.
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back
+                            to first</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first
+            modal</button>
 
 
     </main>
