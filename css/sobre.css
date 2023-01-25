@@ -4,7 +4,8 @@
 }
 
 .item:hover {
-  filter: grayscale(0%)
+  filter: grayscale(0%);
+  cursor: pointer
 }
 
 .carousel-control-next,
@@ -16,7 +17,7 @@ img.inactive {
   filter: grayscale(100%)
 }
 
-img.active {
+img {
   filter: grayscale(0%)
 }
 

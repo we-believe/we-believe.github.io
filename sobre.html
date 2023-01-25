@@ -47,13 +47,13 @@
         <div class="container text-center">
             <div class="row align-items-center">
                 <div class="item col-sm-6 col-md-4 col-lg-3 mt-4" data-bs-target="#mg1" data-bs-toggle="modal">
-                    <img src="./images/galery/img1.jpg" class="hover-shadow rounded img-fluid">
+                    <img id="galleryimg1" src="./images/galery/img1.jpg" class="hover-shadow rounded img-fluid">
                 </div>
                 <div class="item col-sm-6 col-md-4 col-lg-3 mt-4" data-bs-target="#mg2" data-bs-toggle="modal">
-                    <img src="./images/galery/img2.jpg" class="hover-shadow rounded img-fluid">
+                    <img id="galleryimg2" src="./images/galery/img2.jpg" class="hover-shadow rounded img-fluid">
                 </div>
                 <div class="item col-sm-6 col-md-4 col-lg-3 mt-4" data-bs-target="#mg3" data-bs-toggle="modal">
-                    <img src="./images/galery/img3.jpg" class="hover-shadow rounded img-fluid">
+                    <img id="galleryimg3" src="./images/galery/img3.jpg" class="hover-shadow rounded img-fluid">
                 </div>
                 <div class="item col-sm-6 col-md-4 col-lg-3 mt-4" data-bs-target="#mg4" data-bs-toggle="modal">
                     <img src="./images/galery/img4.jpg" class="hover-shadow rounded img-fluid">
@@ -67,7 +67,7 @@
             </div>
         </div>
 
-<!--falta ver a questão do id e fazer funcionar e por fim ver a responsividade-->
+        <!--falta ver a questão do id e fazer funcionar e por fim ver a responsividade-->
         <div class="modal fade" id="mg1" aria-hidden="true" aria-labelledby="mgLabel" tabindex="-1">
             <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content">
@@ -78,7 +78,7 @@
                     <div class="modal-body">
                         <div id="carousel2" class="carousel carousel-dark slide h-100 w-100">
                             <div class="carousel-inner h-100 w-100">
-                                <div class="carousel-item h-100 w-100 active">
+                                <div class="carousel-item h-100 w-100">
                                     <img src="./images/galery/img1.jpg"
                                         class="object-fit-contain mh-100 mw-100 position-absolute top-50 start-50 translate-middle"
                                         alt=" img1">
@@ -125,23 +125,26 @@
                         <div class="row justify-content-center">
                             <div class="col-2">
                                 <div class="container" style="width: 120px; height: 120px">
-                                    <img src="./images/galery/img11.jpg" class="img-fluid rounded active"
-                                        max-width="150px" max-height="150px" type="button" data-bs-target="#carousel2"
-                                        data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                                    <img id="menuimg1" src="./images/galery/img11.jpg"
+                                        class="img-fluid rounded inactive" max-width="150px" max-height="150px"
+                                        type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active"
+                                        aria-current="true" aria-label="Slide 1">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="container" style="width: 120px; height: 120px">
-                                    <img src="./images/galery/img21.jpg" class="img-fluid rounded inactive"
-                                        max-width="150px" max-height="150px" type="button" data-bs-target="#carousel2"
-                                        data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2">
+                                    <img id="menuimg2" src="./images/galery/img21.jpg"
+                                        class="img-fluid rounded inactive" max-width="150px" max-height="150px"
+                                        type="button" data-bs-target="#carousel2" data-bs-slide-to="1" class="active"
+                                        aria-current="true" aria-label="Slide 2">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="container" style="width: 120px; height: 120px">
-                                    <img src="./images/galery/img31.jpg" class="img-fluid rounded inactive"
-                                        max-width="150px" max-height="150px" type="button" data-bs-target="#carousel2"
-                                        data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3">
+                                    <img id="menuimg3" src="./images/galery/img31.jpg"
+                                        class="img-fluid rounded inactive" max-width="150px" max-height="150px"
+                                        type="button" data-bs-target="#carousel2" data-bs-slide-to="2" class="active"
+                                        aria-current="true" aria-label="Slide 3">
                                 </div>
                             </div>
                             <div class="col-2">
@@ -696,7 +699,7 @@
         crossorigin="anonymous"></script>
     <script src="components/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.js"></script>
-    <script src="./components/sobre.js"></script>
+    <script src="./components/gallery/gallery.js"></script>
 
 </body>
 
