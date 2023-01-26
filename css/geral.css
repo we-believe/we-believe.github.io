@@ -24,10 +24,6 @@ h1 {
     font-family: 'TitanOne'
 }
 
-h1.brand-name {
-    font-family: 'MrDafoe'
-}
-
 h2 {
     font-family: 'TitanOne'
 }
@@ -49,11 +45,7 @@ h6 {
 .nav-item {
     margin-left: 20px;
     font-family: 'Lexend';
-}
 
-.navbar-brand {
-    font-family: 'MrDafoe';
-    vertical-align: middle
 }
 
 /*title*/
