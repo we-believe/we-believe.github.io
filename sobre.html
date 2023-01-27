@@ -50,7 +50,9 @@
             <div class="row justify-content-center">
                 <div class="col col-md-10">
                     <div class="gallery-container" id="animated-thumbnails-gallery">
-                        <a data-lg-size="1600-1067" class="gallery-item" data-src="./images/galery/img1.jpg"
+                        <a data-lg-size="1600-1067" data-pinterest-text="Pin it1"
+                            data-tweet-text="lightGallery slide  1" class="gallery-item"
+                            data-src="./images/galery/img1.jpg"
                             data-sub-html="<h4>Teste 1</h4><p> Local - São Miguel do Guamá.</p>">
                             <img alt="São Miguel" class="img-responsive" src="./images/galery/img11.jpg" />
                         </a>
@@ -233,7 +235,30 @@
     <script src="
 https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js
 "></script>
-    <script src="./components/gallery/gallery.js"></script>
+    <script>
+        lightGallery(document.getElementById("animated-thumbnails-gallery"), {
+  autoplayFirstVideo: false,
+  pager: false,
+  galleryId: "We Believe",
+  flipHorizontal: false,
+  flipVertical: false,
+  rotateLeft: false,
+  plugins: [
+    lgZoom,
+    lgThumbnail,
+    lgShare,
+    lgRotate,
+    lgFullscreen,
+    lgAutoplay
+  ],
+  mobileSettings: {
+    controls: false,
+    showCloseIcon: false,
+    download: false,
+    rotate: false
+  }
+});
+    </script>
 
 </body>
 
