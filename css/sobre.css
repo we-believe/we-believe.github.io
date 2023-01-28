@@ -26,10 +26,3 @@ body {
 .header .lead {
   max-width: 620px;
 }
-
-/** Below CSS is completely optional **/
-
-.gallery-item {
-  width: 200px;
-  padding: 5px;
-}
