@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: 991px) {
 
   .gallery-item {
     transition: .2s ease-in-out;
@@ -9,6 +9,18 @@
     filter: grayscale(0%);
     cursor: pointer
   }
+
+  .gallery-item img {
+    height: 250px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 991px) {
+  .gallery-item img {
+    height: 180px;
+    padding: 5px;
+  }
 }
 
 body {
@@ -16,9 +28,4 @@ body {
   background-image: linear-gradient(right #000000 0%, rgb(100, 99, 99) 52.08%);
   color: #0e3481;
   min-height: 100vh;
-}
-
-.gallery-item img {
-  height: 250px;
-  padding: 5px;
 }
