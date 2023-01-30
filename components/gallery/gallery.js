@@ -1,11 +1,12 @@
-lightGallery(document.getElementById("animated-thumbnails-gallery"), {
+lightGallery(document.getElementById("animated-thumbnails"), {
   autoplayFirstVideo: false,
-  pager: false,
-  galleryId: "We Believe",
+  pager: true,
+  galleryId: "animated-thumbnails",
   flipHorizontal: false,
   flipVertical: false,
   rotateLeft: false,
   thumbnail: true,
+  download: false,
   plugins: [
     lgZoom,
     lgThumbnail,
