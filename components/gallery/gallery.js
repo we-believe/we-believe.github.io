@@ -5,6 +5,7 @@ lightGallery(document.getElementById("animated-thumbnails-gallery"), {
   flipHorizontal: false,
   flipVertical: false,
   rotateLeft: false,
+  thumbnail: true,
   plugins: [
     lgZoom,
     lgThumbnail,
