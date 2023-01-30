@@ -18,7 +18,7 @@ body {
   min-height: 100vh;
 }
 
-.gallery-item {
-  height: 100px;
+.gallery-item img {
+  height: 250px;
   padding: 5px;
 }
