@@ -10,8 +10,6 @@ lightGallery(document.getElementById("animated-thumbnails"), {
   plugins: [
     lgZoom,
     lgThumbnail,
-    lgShare,
-    lgRotate,
     lgFullscreen,
     lgAutoplay
   ],
