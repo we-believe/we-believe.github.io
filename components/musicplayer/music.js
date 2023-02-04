@@ -42,10 +42,10 @@ const app = {
     },
     songs: [
         {
-            name: "Forest Lullabye",
-            singer: "Asher Fulero",
-            path: "./assets/audio/song1.mp3",
-            image: "./assets/image/img1.jpg"
+            name: "Tempo de Alegria",
+            singer: "We Believe",
+            path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
+            image: "./components/musicplayer/image/img1.jpg"
         },
 
         {
