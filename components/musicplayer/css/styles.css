@@ -22,6 +22,7 @@
   position: relative;
   max-width: 480px;
   margin: 0 auto;
+  padding: 12px;
 }
 
 .player .icon-pause {
@@ -37,12 +38,11 @@
 }
 
 .dashboard {
-  background-color: #ffffffea;
+  background-color: #ececec;
   position: relative;
-  padding: 2%;
-  width: 90%;
   max-width: 480px;
-  border-bottom: 1px solid #ffffffea;
+  border-bottom: 2px solid #ececec;
+  margin-bottom: 12px;
 }
 
 /* HEADER */
@@ -118,10 +118,11 @@ header h2 {
 }
 
 .progress {
+
   width: 100%;
   -webkit-appearance: none;
-  height: 6px;
-  background: #000000;
+  height: 12px;
+  background: #212429;
   outline: none;
   opacity: 0.7;
   -webkit-transition: 0.2s;
@@ -131,8 +132,9 @@ header h2 {
 .progress::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 12px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 20px;
   background-color: var(--primary-color);
   cursor: pointer;
 }
@@ -140,14 +142,13 @@ header h2 {
 /* PLAYLIST */
 .playlist {
   margin-top: 0px;
-  padding: 12px;
 }
 
 .song {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  background-color: #fff;
+  background-color: #ececec;
   padding: 8px 16px;
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
@@ -171,7 +172,7 @@ header h2 {
 
 .song.active .author,
 .song.active .title {
-  color: #fff;
+  color: #ececec;
 }
 
 .song .thumb {
