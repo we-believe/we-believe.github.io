@@ -1,5 +1,30 @@
 /*responsividade*/
 
+@media (min-width: 276px) {
+
+    html {
+        overflow: hidden;
+    }
+
+    div.container {
+        height: auto;
+        max-width: 95%;
+    }
+
+    div.row {
+        height: auto;
+        max-width: 100%;
+    }
+
+    div.player {
+        margin-left: 2%;
+    }
+
+    div#letra {
+        max-width: 85%;
+    }
+}
+
 @media (min-width: 576px) {
     div#letra {
         height: auto;
