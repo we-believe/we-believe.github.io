@@ -203,3 +203,7 @@ header h2 {
   color: #99999900;
   font-size: 18px;
 }
+
+p {
+  margin-bottom: 0;
+}

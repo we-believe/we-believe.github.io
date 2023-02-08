@@ -49,46 +49,22 @@ const app = {
         },
 
         {
-            name: "Go!",
-            singer: "NEFFEX",
-            path: "./assets/audio/song2.mp3",
-            image: "./assets/image/img1.jpg"
+            name: "Quando o meu Eu quiser se levantar",
+            singer: "We Believe",
+            path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
+            image: "./components/musicplayer/image/img1.jpg"
         },
         {
-            name: "Good Day (Wake Up)",
-            singer: "NEFFEX",
-            path: "./assets/audio/song3.mp3",
-            image: "./assets/image/img1.jpg"
+            name: "Galatas 2.18",
+            singer: "We Believe",
+            path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
+            image: "./components/musicplayer/image/img1.jpg"
         },
         {
-            name: "Kiss The Heavens ",
-            singer: "Asher Fulero",
-            path: "./assets/audio/song4.mp3",
-            image: "./assets/image/img1.jpg"
-        },
-        {
-            name: "Pray",
-            singer: "Anno Domini Beats",
-            path: "./assets/audio/song5.mp3",
-            image: "./assets/image/img1.jpg"
-        },
-        {
-            name: "Skylines",
-            singer: "Anno Domini Beats",
-            path: "./assets/audio/song6.mp3",
-            image: "./assets/image/img6.jpg"
-        },
-        {
-            name: "Your Love",
-            singer: "Young Logos",
-            path: "./assets/audio/song7.mp3",
-            image: "./assets/image/img6.jpg"
-        },
-        {
-            name: "Break Your Lock and Key",
-            singer: "Mini Vandals",
-            path: "./assets/audio/song8.mp3",
-            image: "./assets/image/img6.jpg"
+            name: "Outra",
+            singer: "We Believe",
+            path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
+            image: "./components/musicplayer/image/img1.jpg"
         }
     ],
 
@@ -103,10 +79,7 @@ const app = {
 						        <h3 class="title">${song.name}</h3>
 						        <p class="author">${song.singer}</p>
 					        </div>
-					        <div class="option">
-						        <i class="fas fa-ellipsis-h"></i>
-					        </div>
-				         </div>`;
+					        </div>`;
             //['']
         });
         playlist.innerHTML = htmls.join("\n");
@@ -136,7 +109,7 @@ const app = {
 
         //handle cd's spinning animation
         const cdThumbAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
-            duration: 10000, //10s
+            duration: 5000, //5s
             interations: Infinity
         });
 
