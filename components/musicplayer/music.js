@@ -45,26 +45,38 @@ const app = {
             name: "Tempo de Alegria",
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
-            image: "./components/musicplayer/image/img1.jpg"
+            image: "./components/musicplayer/image/img1.jpg",
+            lpI: "L11orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+            lpII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+            lpIII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
         },
 
         {
             name: "Quando o meu Eu quiser se levantar",
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
-            image: "./components/musicplayer/image/img1.jpg"
+            image: "./components/musicplayer/image/img1.jpg",
+            lpI: "L22orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+            lpII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+            lpIII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
         },
         {
             name: "Galatas 2.18",
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
-            image: "./components/musicplayer/image/img1.jpg"
+            image: "./components/musicplayer/image/img1.jpg",
+            lpI: "L33orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+            lpII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+            lpIII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
         },
         {
             name: "Outra",
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
-            image: "./components/musicplayer/image/img1.jpg"
+            image: "./components/musicplayer/image/img1.jpg",
+            lpI: "L44orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+            lpII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+            lpIII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
         }
     ],
 
@@ -79,7 +91,20 @@ const app = {
 						        <h3 class="title">${song.name}</h3>
 						        <p class="author">${song.singer}</p>
 					        </div>
-					        </div>`;
+					        </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="container rounded bg-gradient bg-gray-600" id="letra">
+                        <h4 class="text-center mt-3 mb-0">${song.name}</h4>
+                        <p class="text-end mt-0 mb-3">${song.singer}</p>
+                        <p class="text-start">${song.lpI}</p>
+                        <p class="text-start">${song.lpII}</p>
+                        <p class="text-start">${song.lpIII}</p>
+                        </div>
+                </div>
+            </div>`;
             //['']
         });
         playlist.innerHTML = htmls.join("\n");
