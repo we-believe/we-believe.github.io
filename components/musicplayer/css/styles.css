@@ -21,8 +21,8 @@
 .player {
   position: relative;
   max-width: 480px;
-  margin: 0 auto;
-  padding: 12px;
+  margin: auto;
+  padding: 0px 12px;
 }
 
 .player .icon-pause {
@@ -42,7 +42,8 @@
   position: relative;
   max-width: 480px;
   border-bottom: 2px solid #ececec;
-  margin-bottom: 12px;
+  margin: 0px auto 12px;
+
 }
 
 /* HEADER */
@@ -65,7 +66,7 @@ header h2 {
 .cd {
   display: flex;
   margin: auto;
-  width: 200px;
+  width: 150px;
 }
 
 .cd-thumb {

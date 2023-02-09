@@ -1,10 +1,6 @@
 /*responsividade*/
 
-@media (min-width: 276px) {
-
-    html {
-        overflow: hidden;
-    }
+@media (max-width: 991px) {
 
     div.container {
         height: auto;
@@ -16,31 +12,19 @@
         max-width: 100%;
     }
 
-    div.player {
-        margin-left: 2%;
-    }
-
     div#letra {
         max-width: 85%;
     }
-}
 
-@media (min-width: 576px) {
-    div#letra {
-        height: auto;
+    div.player {
+        margin-bottom: 20px;
     }
-}
 
-@media (min-width: 768px) {
-    div#letra {
-        height: 350px;
-        overflow: auto;
-    }
 }
 
 @media (min-width: 992px) {
     div#letra {
-        height: 450px;
+        height: 625px;
         overflow: auto;
         border: 1px solid white;
     }
@@ -48,11 +32,13 @@
 
 @media (min-width: 1200px) {
     div#letra {
-        height: 550px;
+        height: 625px;
         overflow: auto;
         border: 1px solid white;
     }
 }
+
+
 
 /*scrollbar*/
 
