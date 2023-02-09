@@ -92,10 +92,11 @@ const app = {
 						        <p class="author">${song.singer}</p>
 					        </div>
 					        </div>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
+                            </div>`
+                        `
+                            <div class="song ${index === this.currentIndex ? "active" : ""
+                   }" data-index = ${index}>
+                   <div class="col-lg-5">
                     <div class="container rounded bg-gradient bg-gray-600" id="letra">
                         <h4 class="text-center mt-3 mb-0">${song.name}</h4>
                         <p class="text-end mt-0 mb-3">${song.singer}</p>
@@ -104,7 +105,14 @@ const app = {
                         <p class="text-start">${song.lpIII}</p>
                         </div>
                 </div>
-            </div>`;
+                               <div class="thumb" style="background-image: url('${song.image}')">
+                                 </div>
+                               <div class="body">
+                                   <h3 class="title">${song.name}</h3>
+                                   <p class="author">${song.singer}</p>
+                               </div>
+                               </div>
+                               </div>`;                
             //['']
         });
         playlist.innerHTML = htmls.join("\n");
@@ -233,7 +241,10 @@ const app = {
             if (e.target.closest(".song:not(.active)") || !e.target.closest(".option")) {
                 _this.currentIndex = Number(songNode.dataset.index);
                 _this.loadCurrentSong();
-                _this.render();
+                _this.render(
+
+
+                );
                 audio.play();
             }
         };
