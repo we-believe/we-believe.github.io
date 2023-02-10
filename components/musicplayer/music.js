@@ -31,7 +31,7 @@ const playlist = $(".playlist");
 const song = $(".song");
 const ltitle = $(".letratitle");
 const lsinger = $(".letrasinger");
-const letra = $("#letra");
+const lletra = $("#lletra");
 
 const app = {
     currentIndex: 0,
@@ -232,7 +232,7 @@ const app = {
         audio.src = this.currentSong.path;
         ltitle.innerText = this.currentSong.name;
         lsinger.innerText = this.currentSong.singer;
-        letra.innerText = this.currentSong.letra;
+        lletra.innerText = this.currentSong.letra;
     },
     //load config
     loadConfig: function () {

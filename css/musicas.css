@@ -14,10 +14,15 @@
 
     div#letra {
         max-width: 85%;
+        border: 1px solid white;
     }
 
     div.player {
         margin-bottom: 20px;
+    }
+
+    .letratitle {
+        padding: 12px;
     }
 
 }
