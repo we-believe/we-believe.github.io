@@ -29,6 +29,9 @@ const btnRepeat = $(".btn-repeat");
 const btnRandom = $(".btn-random");
 const playlist = $(".playlist");
 const song = $(".song");
+const ltitle = $(".letratitle");
+const lsinger = $(".letrasinger");
+const letra = $("#letra");
 
 const app = {
     currentIndex: 0,
@@ -46,9 +49,7 @@ const app = {
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
             image: "./components/musicplayer/image/img1.jpg",
-            lpI: "L11orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
-            lpII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
-            lpIII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
+            letra: "1111In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
         },
 
         {
@@ -56,27 +57,21 @@ const app = {
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
             image: "./components/musicplayer/image/img1.jpg",
-            lpI: "L22orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
-            lpII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
-            lpIII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
+            letra: "222222In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
         },
         {
             name: "Galatas 2.18",
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
             image: "./components/musicplayer/image/img1.jpg",
-            lpI: "L33orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
-            lpII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
-            lpIII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
+            letra: "333333333In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
         },
         {
             name: "Outra",
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
             image: "./components/musicplayer/image/img1.jpg",
-            lpI: "L44orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
-            lpII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
-            lpIII: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
+            letra: "44444444In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
         }
     ],
 
@@ -235,6 +230,9 @@ const app = {
         heading.innerText = this.currentSong.name;
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
         audio.src = this.currentSong.path;
+        ltitle.innerText = this.currentSong.name;
+        lsinger.innerText = this.currentSong.singer;
+        letra.innerText = this.currentSong.letra;
     },
     //load config
     loadConfig: function () {
