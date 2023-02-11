@@ -1,12 +1,14 @@
 @media (min-width: 768px) {
 
   .gallery-item {
-    transition: .2s ease-in-out;
-    filter: grayscale(70%)
+    transition: transform 1s ease;
+    transform: scale(1);
+
   }
 
-  .gallery-item:hover {
-    filter: grayscale(0%);
+  .gallery-item:hover img {
+    transition: transform 1s ease;
+    transform: scale(1.2);
     cursor: pointer
   }
 

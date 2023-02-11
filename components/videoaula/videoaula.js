@@ -29,9 +29,9 @@ const btnRepeat = $(".btn-repeat");
 const btnRandom = $(".btn-random");
 const playlist = $(".playlist");
 const song = $(".song");
-const ltitle = $(".letratitle");
-const lsinger = $(".letrasinger");
-const lletra = $("#lletra");
+const ctitle = $(".cifratitle");
+const csinger = $(".cifrasinger");
+const cletra = $("#ccifra");
 
 const app = {
     currentIndex: 0,
@@ -49,7 +49,7 @@ const app = {
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
             image: "./components/musicplayer/image/img1.jpg",
-            letra: "1111In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
+            cifra: "1111In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
         },
 
         {
@@ -57,21 +57,21 @@ const app = {
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
             image: "./components/musicplayer/image/img1.jpg",
-            letra: "222222In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
+            cifra: "222222In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
         },
         {
             name: "Galatas 2.18",
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
             image: "./components/musicplayer/image/img1.jpg",
-            letra: "333333333In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
+            cifra: "333333333In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
         },
         {
             name: "Outra",
             singer: "We Believe",
             path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
             image: "./components/musicplayer/image/img1.jpg",
-            letra: "44444444In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
+            cifra: "44444444In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
         }
     ],
 
@@ -102,200 +102,93 @@ const app = {
         });
     },
 
-    // Handle the events
-    handleEvents: function () {
-        const _this = this;
-        //handle the scrolling
-        const cdWidth = cd.offsetWidth; //to get the original width of CD element
-        document.onscroll = function () {
-            const scrollTop = window.scaleY || document.documentElement.scrollTop; // to get the number of pixels users scroll
-            const newCdWidth = cdWidth - scrollTop;
+    //listen to click events on the playlist.
+    playlist.onclick = function (e) {
+        const songNode = e.target.closest(".song");
+        //handle the click on a song
+        if (e.target.closest(".song:not(.active)") || !e.target.closest(".option")) {
+            _this.currentIndex = Number(songNode.dataset.index);
+            _this.loadCurrentSong();
+            _this.render(
 
-            newCdWidth > 0 ? (cd.style.width = newCdWidth + "px") : 0; //set the new width for the CD
-            cd.style.opacity = newCdWidth / cdWidth; //set the opacity for the CD
-        };
 
-        //handle cd's spinning animation
-        const cdThumbAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
-            duration: 5000, //5s
-            interations: Infinity
-        });
-
-        //play/pause the song
-        playBtn.onclick = function () {
-            if (_this.isPlaying) {
-                audio.pause();
-            } else {
-                audio.play();
-            }
-
-            //when the song is playing
-            audio.onplay = function () {
-                _this.isPlaying = true;
-                player.classList.add("playing");
-                cdThumbAnimate.play();
-            };
-
-            //show the progress
-            audio.ontimeupdate = function () {
-                const progressPercent = Math.floor(
-                    (this.currentTime / audio.duration) * 100
-                );
-                progress.value = progressPercent;
-            };
-
-            //move to a new position in the audio
-            progress.onchange = function (e) {
-                const seekTime = (e.target.value / 100) * audio.duration;
-                audio.currentTime = seekTime;
-            };
-
-            //when this song is paused
-            audio.onpause = function () {
-                _this.isPlaying = false;
-                player.classList.remove("playing");
-                cdThumbAnimate.pause();
-            };
-        };
-        //when a user clicks the Next button
-        btnNext.onclick = function () {
-            if (_this.isRandom) {
-                _this.loadRandomSong();
-            } else {
-                _this.loadNextSong();
-            }
+            );
             audio.play();
-            _this.render();
-            _this.scrollActiveSong();
-        };
-
-        //when a user clicks the Previous button
-        btnPrev.onclick = function () {
-            if (_this.isRandom) {
-                _this.loadRandomSong();
-            } else {
-                _this.loadPrevSong();
-            }
-            audio.play();
-            _this.render();
-            _this.scrollActiveSong();
-        };
-
-        //when a user clicks the random button
-        btnRandom.onclick = function () {
-            _this.isRandom = !_this.isRandom;
-            _this.loadRandomSong();
-            _this.setConfig("isRandom", _this.isRandom);
-            btnRandom.classList.toggle("active", _this.isRandom);
-            audio.play();
-        };
-
-        //when a user clicks the repeat button
-        btnRepeat.onclick = function () {
-            _this.isRepeated = !_this.isRepeated;
-            if (_this.isRandom) {
-                _this.isRandom = false;
-                _this.setConfig("isRepeated", _this.isRepeated);
-            }
-            btnRepeat.classList.toggle("active", _this.isRepeated);
-        };
-
-        //when the current playlist is ended
-        audio.onended = function () {
-            if (_this.isRepeated) {
-                audio.play();
-            } else {
-                btnNext.click();
-            }
-        };
-
-        //listen to click events on the playlist.
-        playlist.onclick = function (e) {
-            const songNode = e.target.closest(".song");
-            //handle the click on a song
-            if (e.target.closest(".song:not(.active)") || !e.target.closest(".option")) {
-                _this.currentIndex = Number(songNode.dataset.index);
-                _this.loadCurrentSong();
-                _this.render(
-
-
-                );
-                audio.play();
-            }
-        };
-    },
+        }
+    };
+},
 
     //load the current song which is playing
     loadCurrentSong: function () {
         heading.innerText = this.currentSong.name;
-        cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
-        audio.src = this.currentSong.path;
-        ltitle.innerText = this.currentSong.name;
-        lsinger.innerText = this.currentSong.singer;
-        lletra.innerText = this.currentSong.letra;
+cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
+audio.src = this.currentSong.path;
+ltitle.innerText = this.currentSong.name;
+lsinger.innerText = this.currentSong.singer;
+lletra.innerText = this.currentSong.letra;
     },
-    //load config
-    loadConfig: function () {
-        this.isRandom = this.config.isRandom;
-        this.isRepeated = this.config.isRepeated;
-        btnRandom.classList.toggle("active", this.isRandom);
-        btnRepeat.classList.toggle("active", this.isRepeated);
-    },
+//load config
+loadConfig: function () {
+    this.isRandom = this.config.isRandom;
+    this.isRepeated = this.config.isRepeated;
+    btnRandom.classList.toggle("active", this.isRandom);
+    btnRepeat.classList.toggle("active", this.isRepeated);
+},
 
-    //Load the next song
-    loadNextSong: function () {
-        this.currentIndex++;
-        if (this.currentIndex >= this.songs.length) {
-            this.currentIndex = 0;
-        }
-        this.loadCurrentSong();
-    },
-
-    //load the previous song
-    loadPrevSong: function () {
-        this.currentIndex--;
-        if (this.currentIndex < 0) {
-            this.currentIndex = this.songs.length - 1;
-        }
-        this.loadCurrentSong();
-    },
-
-    //play a random song
-    loadRandomSong: function () {
-        let newIndex;
-        do {
-            newIndex = Math.floor(Math.random() * this.songs.length);
-        } while (newIndex === this.currentIndex);
-
-        this.currentIndex = newIndex;
-        this.loadCurrentSong();
-    },
-
-    //scroll the active song to view
-    scrollActiveSong: function () {
-        setTimeout(() => {
-            $(".song.active").scrollIntoView({ behavior: "smooth", block: "nearest" });
-        }, 500);
-    },
-
-    start: function () {
-        //load config
-        this.loadConfig();
-
-        //define the properties for the app object
-        this.defineProperties();
-
-        //default, play the current song
-
-        //listen and handle DOM events
-        this.handleEvents();
-
-        //load a song to play
-        this.loadCurrentSong();
-
-        //reder the playlist
-        this.render();
+//Load the next song
+loadNextSong: function () {
+    this.currentIndex++;
+    if (this.currentIndex >= this.songs.length) {
+        this.currentIndex = 0;
     }
+    this.loadCurrentSong();
+},
+
+//load the previous song
+loadPrevSong: function () {
+    this.currentIndex--;
+    if (this.currentIndex < 0) {
+        this.currentIndex = this.songs.length - 1;
+    }
+    this.loadCurrentSong();
+},
+
+//play a random song
+loadRandomSong: function () {
+    let newIndex;
+    do {
+        newIndex = Math.floor(Math.random() * this.songs.length);
+    } while (newIndex === this.currentIndex);
+
+    this.currentIndex = newIndex;
+    this.loadCurrentSong();
+},
+
+//scroll the active song to view
+scrollActiveSong: function () {
+    setTimeout(() => {
+        $(".song.active").scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, 500);
+},
+
+start: function () {
+    //load config
+    this.loadConfig();
+
+    //define the properties for the app object
+    this.defineProperties();
+
+    //default, play the current song
+
+    //listen and handle DOM events
+    this.handleEvents();
+
+    //load a song to play
+    this.loadCurrentSong();
+
+    //reder the playlist
+    this.render();
+}
 };
 
 app.start();
