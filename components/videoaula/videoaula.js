@@ -23,8 +23,7 @@ song1.addEventListener("click", function () {
     });
     cifra1.classList.remove("off");
     title.innerText = title1.innerText;
-    iframe.src =
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvpBbl4g_9u6rDipQIJuhCrqCfoQ7kox0vzQdwuzKCksp5b4xk66gDqeQ&s=10";
+    iframe.src = "https://www.youtube.com/embed/SKtderAyqwE";
 });
 song2.addEventListener("click", function () {
     Array.from(song).forEach(function (el) {
@@ -36,8 +35,7 @@ song2.addEventListener("click", function () {
     });
     cifra2.classList.remove("off");
     title.innerText = title2.innerText;
-    iframe.src =
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0SSQVhSnDQ1jNvh-cE749RggrDvYWRV45tIKv3STotp6B5YB9RZDSoa3t&s=10";
+    iframe.src = "https://www.youtube.com/embed/wV9Hd2Uv4sI";
 });
 song3.addEventListener("click", function () {
     Array.from(song).forEach(function (el) {
@@ -49,6 +47,5 @@ song3.addEventListener("click", function () {
     });
     cifra3.classList.remove("off");
     title.innerText = title3.innerText;
-    iframe.src =
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwZXDdKa7t3Y950w9qbVkCRMleb-xRrXcQFthH6Qi8AukMCwtw3yJyWHY&s=10";
+    iframe.src = "https://www.youtube.com/embed/hMfRMLbgGeE";
 });
