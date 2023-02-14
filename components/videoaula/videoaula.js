@@ -1,194 +1,54 @@
-/**
- * To do in this app:
- * 1. Display the song playing
- * 2. Play the sone
- * 3. Pause the song playing
- * 4. Keep the song repeatedly playing
- * 5. new song
- * 6. Previous song
- * 7. Play the new song randomly
- * 8. Select the song to play.
- * 9. Scroll active songs
- */
+var song = document.getElementsByClassName("song");
+var song1 = document.getElementById("song1");
+var song2 = document.getElementById("song2");
+var song3 = document.getElementById("song3");
+var title = document.getElementById("title");
+var title1 = document.getElementById("title1");
+var title2 = document.getElementById("title2");
+var title3 = document.getElementById("title3");
+var cifra = document.getElementsByClassName("cifra");
+var cifra1 = document.getElementById("cifra1");
+var cifra2 = document.getElementById("cifra2");
+var cifra3 = document.getElementById("cifra3");
+var iframe = document.getElementById("iframe");
+var img = document.getElementById("iframe");
 
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
-const PLAYER_STORAGE_KEY = "MUSIC_PLAYER_STORAGE";
-
-const heading = $("header h2");
-const cdThumb = $(".cd-thumb");
-const audio = $("#audio");
-const cd = $(".cd");
-const playBtn = $(".btn-toggle-play");
-const player = $(".player");
-const progress = $(".progress");
-const btnNext = $(".btn-new");
-const btnPrev = $(".btn-prev");
-const btnRepeat = $(".btn-repeat");
-const btnRandom = $(".btn-random");
-const playlist = $(".playlist");
-const song = $(".song");
-const ctitle = $(".cifratitle");
-const csinger = $(".cifrasinger");
-const cletra = $("#ccifra");
-
-const app = {
-    currentIndex: 0,
-    isPlaying: false,
-    isRandom: false,
-    isRepeated: false,
-    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
-    setConfig: function (key, value) {
-        this.config[key] = value;
-        localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
-    },
-    songs: [
-        {
-            name: "Tempo de Alegria",
-            singer: "We Believe",
-            path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
-            image: "./components/musicplayer/image/img1.jpg",
-            cifra: "1111In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
-        },
-
-        {
-            name: "Quando o meu Eu quiser se levantar",
-            singer: "We Believe",
-            path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
-            image: "./components/musicplayer/image/img1.jpg",
-            cifra: "222222In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
-        },
-        {
-            name: "Galatas 2.18",
-            singer: "We Believe",
-            path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
-            image: "./components/musicplayer/image/img1.jpg",
-            cifra: "333333333In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
-        },
-        {
-            name: "Outra",
-            singer: "We Believe",
-            path: "./components/musicplayer/audio/tempo-de-alegria.mp3",
-            image: "./components/musicplayer/image/img1.jpg",
-            cifra: "44444444In this time of desperation \nWhen all we know is doubt and fear\nThere is only one foundation\nWe believe"
-        }
-    ],
-
-    render: function () {
-        const htmls = this.songs.map((song, index) => {
-            return `
-			             <div class="song ${index === this.currentIndex ? "active" : ""
-                }" data-index = ${index}>
-					        <div class="thumb" style="background-image: url('${song.image}')">
-                      		</div>
-					        <div class="body">
-						        <h3 class="title">${song.name}</h3>
-						        <p class="author">${song.singer}</p>
-					        </div>
-					        </div>
-                            </div>`;
-            //['']
-        });
-        playlist.innerHTML = htmls.join("\n");
-    },
-
-    //define properties for the app object
-    defineProperties: function () {
-        Object.defineProperty(this, "currentSong", {
-            get: function () {
-                return this.songs[this.currentIndex];
-            }
-        });
-    },
-
-    //listen to click events on the playlist.
-    playlist.onclick = function (e) {
-        const songNode = e.target.closest(".song");
-        //handle the click on a song
-        if (e.target.closest(".song:not(.active)") || !e.target.closest(".option")) {
-            _this.currentIndex = Number(songNode.dataset.index);
-            _this.loadCurrentSong();
-            _this.render(
-
-
-            );
-            audio.play();
-        }
-    };
-},
-
-    //load the current song which is playing
-    loadCurrentSong: function () {
-        heading.innerText = this.currentSong.name;
-cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
-audio.src = this.currentSong.path;
-ltitle.innerText = this.currentSong.name;
-lsinger.innerText = this.currentSong.singer;
-lletra.innerText = this.currentSong.letra;
-    },
-//load config
-loadConfig: function () {
-    this.isRandom = this.config.isRandom;
-    this.isRepeated = this.config.isRepeated;
-    btnRandom.classList.toggle("active", this.isRandom);
-    btnRepeat.classList.toggle("active", this.isRepeated);
-},
-
-//Load the next song
-loadNextSong: function () {
-    this.currentIndex++;
-    if (this.currentIndex >= this.songs.length) {
-        this.currentIndex = 0;
-    }
-    this.loadCurrentSong();
-},
-
-//load the previous song
-loadPrevSong: function () {
-    this.currentIndex--;
-    if (this.currentIndex < 0) {
-        this.currentIndex = this.songs.length - 1;
-    }
-    this.loadCurrentSong();
-},
-
-//play a random song
-loadRandomSong: function () {
-    let newIndex;
-    do {
-        newIndex = Math.floor(Math.random() * this.songs.length);
-    } while (newIndex === this.currentIndex);
-
-    this.currentIndex = newIndex;
-    this.loadCurrentSong();
-},
-
-//scroll the active song to view
-scrollActiveSong: function () {
-    setTimeout(() => {
-        $(".song.active").scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }, 500);
-},
-
-start: function () {
-    //load config
-    this.loadConfig();
-
-    //define the properties for the app object
-    this.defineProperties();
-
-    //default, play the current song
-
-    //listen and handle DOM events
-    this.handleEvents();
-
-    //load a song to play
-    this.loadCurrentSong();
-
-    //reder the playlist
-    this.render();
-}
-};
-
-app.start();
+song1.addEventListener("click", function () {
+    Array.from(song).forEach(function (el) {
+        el.classList.remove("active");
+    });
+    song1.classList.add("active");
+    Array.from(cifra).forEach(function (el) {
+        el.classList.add("off");
+    });
+    cifra1.classList.remove("off");
+    title.innerText = title1.innerText;
+    iframe.src =
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvpBbl4g_9u6rDipQIJuhCrqCfoQ7kox0vzQdwuzKCksp5b4xk66gDqeQ&s=10";
+});
+song2.addEventListener("click", function () {
+    Array.from(song).forEach(function (el) {
+        el.classList.remove("active");
+    });
+    song2.classList.add("active");
+    Array.from(cifra).forEach(function (el) {
+        el.classList.add("off");
+    });
+    cifra2.classList.remove("off");
+    title.innerText = title2.innerText;
+    iframe.src =
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0SSQVhSnDQ1jNvh-cE749RggrDvYWRV45tIKv3STotp6B5YB9RZDSoa3t&s=10";
+});
+song3.addEventListener("click", function () {
+    Array.from(song).forEach(function (el) {
+        el.classList.remove("active");
+    });
+    song3.classList.add("active");
+    Array.from(cifra).forEach(function (el) {
+        el.classList.add("off");
+    });
+    cifra3.classList.remove("off");
+    title.innerText = title3.innerText;
+    iframe.src =
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwZXDdKa7t3Y950w9qbVkCRMleb-xRrXcQFthH6Qi8AukMCwtw3yJyWHY&s=10";
+});
