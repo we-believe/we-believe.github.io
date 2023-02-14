@@ -10,8 +10,8 @@ var cifra = document.getElementsByClassName("cifra");
 var cifra1 = document.getElementById("cifra1");
 var cifra2 = document.getElementById("cifra2");
 var cifra3 = document.getElementById("cifra3");
-var iframe = document.getElementById("iframe");
-var img = document.getElementById("iframe");
+var video = document.getElementById("video");
+
 
 song1.addEventListener("click", function () {
     Array.from(song).forEach(function (el) {
@@ -23,7 +23,7 @@ song1.addEventListener("click", function () {
     });
     cifra1.classList.remove("off");
     title.innerText = title1.innerText;
-    iframe.src = "https://www.youtube.com/embed/SKtderAyqwE";
+    video.src = "https://www.youtube.com/embed/SKtderAyqwE";
 });
 song2.addEventListener("click", function () {
     Array.from(song).forEach(function (el) {
@@ -35,7 +35,7 @@ song2.addEventListener("click", function () {
     });
     cifra2.classList.remove("off");
     title.innerText = title2.innerText;
-    iframe.src = "https://www.youtube.com/embed/wV9Hd2Uv4sI";
+    video.src = "https://www.youtube.com/embed/wV9Hd2Uv4sI";
 });
 song3.addEventListener("click", function () {
     Array.from(song).forEach(function (el) {
@@ -47,5 +47,5 @@ song3.addEventListener("click", function () {
     });
     cifra3.classList.remove("off");
     title.innerText = title3.innerText;
-    iframe.src = "https://www.youtube.com/embed/hMfRMLbgGeE";
+    video.src = "https://www.youtube.com/embed/hMfRMLbgGeE";
 });

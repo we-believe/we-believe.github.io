@@ -6,7 +6,8 @@
 @media (max-width: 768px) {
   div#cifra {
     height: auto;
-    padding: 0px;
+    padding: auto;
+    margin: auto;
   }
 }
 
