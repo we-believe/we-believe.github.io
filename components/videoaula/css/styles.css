@@ -6,8 +6,24 @@
 @media (max-width: 768px) {
   div#cifra {
     height: auto;
-    padding: auto;
+    padding: 0;
     margin: auto;
+  }
+
+  div.col-md-6 {
+    padding-right: 0;
+    margin: 0;
+  }
+
+  div.col-md-5 {
+    padding-right: 0;
+    margin: 0;
+  }
+
+  .container,
+  .row {
+    max-width: 100vw;
+    padding-right: 0;
   }
 }
 
